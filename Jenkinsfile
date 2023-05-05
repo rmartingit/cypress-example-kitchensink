@@ -17,30 +17,30 @@ pipeline {
         stage('Build/Deploy app to staging') {
             steps {
               echo "Copying files to staging and restarting the app"
-           //     sshPublisher(
-           //         publishers: [
-           //             sshPublisherDesc(
-           //                 configName: 'staging',
-           //                 transfers: [
-           //                     sshTransfer(
-           //                         cleanRemote: false,
-           //                         excludes: 'node_modules/',
-           //                         execCommand: '''
-           //                         cd cypress-example-kitchensink
-           //                         npm i
-           //                         pm2 restart start''',
-           //                         execTimeout: 1200000,
-           //                         flatten: false,
-           //                         makeEmptyDirs: false,
-           //                         noDefaultExcludes: false,
-           //                         patternSeparator: '[, ]+',
-           //                         remoteDirectory: '',
-           //                         remoteDirectorySDF: false,
-           //                         removePrefix: '',
-           //                         sourceFiles: '**/*')],
-           //             usePromotionTimestamp: false,
-           //             useWorkspaceInPromotion: false,
-           //             verbose: true)])
+                sshPublisher(
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: 'staging',
+                            transfers: [
+                                sshTransfer(
+                                    cleanRemote: false,
+                                    excludes: 'node_modules/',
+                                    execCommand: '''
+                                    cd cypress-example-kitchensink
+                                    npm i
+                                    pm2 restart start''',
+                                    execTimeout: 1200000,
+                                    flatten: false,
+                                    makeEmptyDirs: false,
+                                    noDefaultExcludes: false,
+                                    patternSeparator: '[, ]+',
+                                    remoteDirectory: '',
+                                    remoteDirectorySDF: false,
+                                    removePrefix: '',
+                                    sourceFiles: '**/*')],
+                        usePromotionTimestamp: false,
+                        useWorkspaceInPromotion: false,
+                        verbose: true)])
          }
         }
         stage('Run automated tests'){
