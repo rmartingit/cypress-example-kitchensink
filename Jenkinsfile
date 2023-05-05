@@ -26,9 +26,8 @@ pipeline {
                                     cleanRemote: false,
                                     excludes: 'node_modules/',
                                     execCommand: '''
-                                    cd cypress-example-kitchensink
-                                    npm i
-                                    pm2 restart start''',
+                                    npm ci
+                                    pm2 restart todo''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
