@@ -41,6 +41,7 @@ pipeline {
            //             usePromotionTimestamp: false,
            //             useWorkspaceInPromotion: false,
            //             verbose: true)])
+         }
         }
         stage('Run automated tests'){
             steps {
