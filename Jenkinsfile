@@ -26,6 +26,7 @@ pipeline {
                                     cleanRemote: false,
                                     excludes: 'node_modules/',
                                     execCommand: '''
+                                    cd /usr/share/nginx/html
                                     npm ci
                                     pm2 restart todo''',
                                     execTimeout: 1200000,
