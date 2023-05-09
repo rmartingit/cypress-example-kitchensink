@@ -2,7 +2,7 @@
 
 context('Location', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/commands/location')
+    cy.visit('/commands/location')
   })
 
   it('cy.hash() - get the current URL hash', () => {

@@ -2,7 +2,7 @@
 
 context('Local Storage / Session Storage', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/commands/storage')
+    cy.visit('/commands/storage')
   })
   // Although localStorage is automatically cleared
   // in between tests to maintain a clean state
