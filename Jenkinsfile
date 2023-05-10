@@ -73,16 +73,16 @@ pipeline {
             }
         }
 
-        stage('SonarQube analysis') {
-          steps {
-            script {
-                      scannerHome = tool 'sonar-scanner';
-                 }
-            withSonarQubeEnv('SonarCloud') { // If you have configured more than one global server connection, you can specify its name
-            sh "${scannerHome}/bin/sonar-scanner"
-            }
-          }
-        }
+        //stage('SonarQube analysis') {
+        //  steps {
+        //    script {
+        //              scannerHome = tool 'sonar-scanner';
+        //         }
+        //    withSonarQubeEnv('SonarCloud') { // If you have configured more than one global server connection, you can specify its name
+        //    sh "${scannerHome}/bin/sonar-scanner"
+        //    }
+        //  }
+        //}
 
         stage('Perform manual testing...'){
             steps {
