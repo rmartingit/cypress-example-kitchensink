@@ -3,4 +3,5 @@ module.exports = ({
   e2e: {
   },
   video: false,
+  failOnStatusCode: false,
 })

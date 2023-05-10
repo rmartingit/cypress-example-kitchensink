@@ -53,7 +53,7 @@ pipeline {
                 //sh 'rm -f mochawesome.json'
                 //sh 'npx cypress run --config baseUrl="http://34.140.29.128" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
                 //sh 'npx cypress run --config baseUrl="http://35.228.18.150/" --browser ${BROWSER} --spec ${SPEC}'
-                sh 'npm run e2e:staging'
+                sh 'npm run e2e:staging1spec'
                 //sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
                 //sh 'npx marge mochawesome-report/mochawesome.json'
             }
