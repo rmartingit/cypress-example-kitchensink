@@ -4,4 +4,5 @@ module.exports = ({
   },
   video: false,
   failOnStatusCode: false,
+  reporter: 'mochawesome',
 })
