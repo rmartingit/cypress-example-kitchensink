@@ -24,11 +24,11 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     cleanRemote: false,
-                                    excludes: 'node_modules/',
+                                    excludes: 'node_modules/,cypress/,**/*.yml',
                                     execCommand: '''
                                     cd /usr/share/nginx/html
                                     npm ci
-                                    pm2 restart npm',
+                                    pm2 restart npm -- start''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
