@@ -1,7 +1,7 @@
 pipeline {
       agent any
 
-      tools {nodejs "NodeJS", sonarqube scanner "sonar-scanner"}
+      tools {nodejs "NodeJS"}
 
 
       parameters{
