@@ -24,11 +24,11 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     cleanRemote: false,
-                                    excludes: 'node_modules/',
+                                    excludes: 'node_modules/','cypress/',
                                     execCommand: '''
                                     cd /usr/share/nginx/html
                                     npm ci
-                                    pm2 restart todo''',
+                                    pm2 restart npm',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
@@ -53,7 +53,7 @@ pipeline {
                 //sh 'rm -f mochawesome.json'
                 //sh 'npx cypress run --config baseUrl="http://34.140.29.128" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
                 //sh 'npx cypress run --config baseUrl="http://35.228.18.150/" --browser ${BROWSER} --spec ${SPEC}'
-                sh 'npm run e2e --env version=staging'
+                sh 'npm run e2e:staging'
                 //sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
                 //sh 'npx marge mochawesome-report/mochawesome.json'
             }

@@ -3,7 +3,7 @@
 context('Spies, Stubs, and Clock', () => {
   it('cy.spy() - wrap a method in a spy', () => {
     // https://on.cypress.io/spy
-    cy.visit('http://localhost:8080/commands/spies-stubs-clocks')
+    cy.visit('/commands/spies-stubs-clocks')
 
     const obj = {
       foo () {},
