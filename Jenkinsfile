@@ -24,7 +24,7 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     cleanRemote: false,
-                                    excludes: 'node_modules/**,cypress/**,',
+                                    excludes: 'node_modules/',
                                     execCommand: '''
                                     cd /usr/share/nginx/html
                                     npm ci
