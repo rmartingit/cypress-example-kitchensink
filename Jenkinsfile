@@ -13,6 +13,10 @@ pipeline {
               ansiColor('xterm')
       }
 
+      environment{
+        SONAR_TOKEN = 'c2771be8da3dd89483ad60f5cf6e9fd7ac8174c5'
+      }
+
       stages {
         stage('Build/Deploy app to staging') {
             steps {
