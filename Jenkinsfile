@@ -94,13 +94,13 @@ pipeline {
             steps {
                 script {
                     // Path to the JMeter installation directory
-                    def jmeterHome = '/usr/share/jmeter'
+                    //def jmeterHome = '/usr/share/jmeter'
 
                     // Path to the JMeter test script
                     def jmeterScript = './testPlanHome.jmx'
 
                     // Execute JMeter test
-                    sh "${jmeterHome}/bin/jmeter.sh -n -t ${jmeterScript}"
+                    sh "jmeter -n -t ${jmeterScript}"
                 }
             }
         }
