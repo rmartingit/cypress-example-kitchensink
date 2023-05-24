@@ -18,7 +18,7 @@
     "lint:yaml": "yamllint '*.yml' '.buildkite/*.yml' '.circleci/*.yml' '.github/workflows/*.yml' '.semaphore/*.yml' 'basic/**/*.yml' ",
     "colon:names": "colon-names",
     "e2e": "cypress run --config baseUrl=http://localhost:8080",
-    "e2e:staging1spec": "cypress run --config baseUrl=http://35.228.200.213 --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome",
+    "e2e:staging1spec": "cypress run --config baseUrl=http://35.228.220.195 --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome",
     "e2e:chrome": "cypress run --browser chrome",
     "e2e:record": "cypress run --record",
     "e2e:record:chrome": "cypress run --record --browser chrome",
