@@ -1,6 +1,5 @@
 pipeline {
       agent any
-      
 
       tools {nodejs "NodeJS"}
 
@@ -14,10 +13,7 @@ pipeline {
               ansiColor('xterm')
       }
 
-      //environment{
-        //SONAR_TOKEN = 'c2771be8da3dd89483ad60f5cf6e9fd7ac8174c5'
-      //}
-
+     
       stages {
         stage('Build/Deploy app to staging') {
             steps {
@@ -88,8 +84,23 @@ pipeline {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
-                    // true = set pipeline to UNSTABLE, false = don't
+                    // true = set pipeline to UNSTABLE, false = don't do that
                     waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
+        stage('JMeter Test') {
+            steps {
+                script {
+                    // Path to the JMeter installation directory
+                    def jmeterHome = '/usr/share/jmeter'
+
+                    // Path to the JMeter test script
+                    def jmeterScript = './testPlanHome.jmx'
+
+                    // Execute JMeter test
+                    sh "${jmeterHome}/bin/jmeter.sh -n -t ${jmeterScript}"
                 }
             }
         }
