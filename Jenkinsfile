@@ -112,31 +112,18 @@ pipeline {
                     sh "${jmeterHome}/bin/jmeter -n -t ${jmeterScript} -l result.jtl"
                 }
             }
-//            post {
-//                always {
+            post {
+                always {
                     // Archive JTL result file
-//                    archiveArtifacts 'result.jtl'
-//                }
-//                success {
-//                    // Publish JMeter report using Performance plugin
-//                    perfReport filterRegex:'', sourceDataFiles: 'result.jtl'
-//                }
-//            }
-        }
-
-        stage('JMeter Performance Report') {
-            steps {
-                perfReport filterRegex: '', sourceDataFiles: 'result.jtl'
-
-                performanceReport parsers: [[$class: 'JUnitParser', glob: 'junit.xml']],
-                    errorFailedThreshold: 10,
-                    errorUnstableThreshold: 5,
-                    relativeFailedThresholdPositive: 0,
-                    relativeFailedThresholdNegative: 20,
-                    relativeUnstableThresholdPositive: 20,
-                    relativeUnstableThresholdNegative: 50
+                    archiveArtifacts 'result.jtl'
+                }
+                success {
+                    // Publish JMeter report using Performance plugin
+                    perfReport filterRegex:'', sourceDataFiles: 'result.jtl'
+                }
             }
         }
+
         stage('Perform manual testing...'){
             steps {
                 timeout(activity: true, time: 5) {
