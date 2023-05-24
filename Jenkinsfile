@@ -99,7 +99,7 @@ pipeline {
         }
 
         stage('JMeter Test') {
-            when { expression { params.skip_sonar != true } } 
+            when { expression { params.skip_jmeter != true } } 
             steps {
                 script {
                     // Path to the JMeter installation directory
