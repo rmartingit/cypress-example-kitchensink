@@ -110,7 +110,7 @@ pipeline {
                 }
                 success {
                     // Publish JMeter report using Performance plugin
-                    perfReport allowNonRestored: false, sourceDataFiles: 'result.jtl'
+                    perfReport filterRegex:'', sourceDataFiles: 'result.jtl'
                 }
             }
         }
