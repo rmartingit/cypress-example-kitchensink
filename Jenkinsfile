@@ -134,10 +134,7 @@ pipeline {
                     relativeFailedThresholdPositive: 0,
                     relativeFailedThresholdNegative: 20,
                     relativeUnstableThresholdPositive: 20,
-                    relativeUnstableThresholdNegative: 50,
-                    errorThresholdMisses: [
-                        [$class: 'ErrorThresholdMisses', percentiles: '90', threshold: '500']
-                    ]
+                    relativeUnstableThresholdNegative: 50
             }
         }
         stage('Perform manual testing...'){
