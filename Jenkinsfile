@@ -100,7 +100,7 @@ pipeline {
                     def jmeterScript = './testPlanHome.jmx'
 
                     // Execute JMeter test
-                    sh "jmeter -n -t ${jmeterScript} -l result.jtl"
+                    sh "${jmeterHome}/bin/jmeter -n -t ${jmeterScript} -l result.jtl"
                 }
             }
             post {
